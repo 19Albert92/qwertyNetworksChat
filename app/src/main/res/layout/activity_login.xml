@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/master_color"
+    tools:context=".LoginActivity">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/info_forLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:gravity="center"
+        android:text="@string/edit_yourInfo"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        android:textStyle="bold" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/login_phone_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/hint_for_loginEditNumber"
+        android:layout_marginHorizontal="25dp"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/edit_text"
+        android:hint="@string/forLoginPhoneNumber"
+        android:inputType="phone"
+        android:maxLength="12"
+        android:maxLines="1"
+        android:padding="15dp"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textStyle="bold" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/hint_for_loginEditNumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/info_forLogin"
+        android:padding="25dp"
+        android:text="@string/hintText_forLoginPhoneNumber"
+        android:textSize="12sp"
+        android:textStyle="italic" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/hint"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/login_phone_input"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="@string/hintText_forPhone"
+        android:textSize="12sp"
+        android:textStyle="italic" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/login_next_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/hint"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/button_color"
+        android:shadowDx="12"
+        android:shadowDy="12"
+        android:shadowRadius="10"
+        android:text="@string/button_to_login"
+        android:textColor="@color/white"
+        android:textStyle="bold" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/login_register_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/login_next_button"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/button_color"
+        android:paddingHorizontal="30dp"
+        android:shadowDx="12"
+        android:shadowDy="12"
+        android:shadowRadius="10"
+        android:text="@string/register_for_email"
+        android:textColor="@color/white"
+        android:textStyle="bold" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/login_verification_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/hint_for_loginEditNumber"
+        android:layout_marginHorizontal="25dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/edit_text"
+        android:inputType="text"
+        android:maxLength="12"
+        android:maxLines="1"
+        android:padding="15dp"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:visibility="invisible" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buttonToVerification"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/hint"
+        android:layout_centerHorizontal="true"
+        android:background="@color/button_master"
+        android:padding="15dp"
+        android:shadowDx="12"
+        android:shadowDy="12"
+        android:shadowRadius="10"
+        android:text="@string/button_to_verification"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:visibility="invisible" />
+
+</RelativeLayout>

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "265865417063",
+    "project_id": "newchatqwerty",
+    "storage_bucket": "newchatqwerty.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:265865417063:android:6fe5407e9c9e08973a1fc2",
+        "android_client_info": {
+          "package_name": "com.example.youtubehome"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "265865417063-pcm1bfi6segqdii283edna4mr2n069e5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDGtx2kfN_dMbG1eXvNJhgROAXvaHpK9Wc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "265865417063-pcm1bfi6segqdii283edna4mr2n069e5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

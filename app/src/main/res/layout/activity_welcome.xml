@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/master_color"
+    tools:context=".WelcomeActivity">
+
+    <TextView
+        android:id="@+id/textWelcome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/iconToWelcome"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="25dp"
+        android:layout_marginBottom="45dp"
+        android:text="@string/welcomeToChat"
+        android:textColor="@color/black"
+        android:textSize="22sp"
+        android:textStyle="bold" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/iconToWelcome"
+        android:layout_width="220dp"
+        android:layout_height="220dp"
+        android:layout_centerInParent="true"
+        android:src="@drawable/ic_launcher_foreground" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/agree_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="15dp"
+        android:background="@color/button_master"
+        android:shadowDx="12"
+        android:shadowDy="12"
+        android:shadowRadius="5"
+        android:text="@string/welcomeToChatButton"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textWelcome_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/privacy"
+        android:layout_centerHorizontal="true"
+        android:text="@string/welcomeToChat_2"
+        android:textColor="@color/black"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/privacy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/agree_button"
+        android:layout_centerHorizontal="true"
+        android:clickable="true"
+        android:text="@string/welcomeToChat_3"
+        android:textColor="@android:color/holo_blue_dark"
+        android:textSize="12sp"
+        android:textStyle="italic" />
+</RelativeLayout>
