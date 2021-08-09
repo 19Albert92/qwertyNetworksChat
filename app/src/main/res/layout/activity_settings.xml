@@ -1,15 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".SettingsActivity">
 
     <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/profile_image"
         android:layout_width="150dp"
         android:layout_height="150dp"
-        android:layout_alignParentEnd="true"
-        android:layout_margin="15dp"/>
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="45dp"
+        android:src="@drawable/profile" />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/linear_settings"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/profile_image"
+        android:layout_marginHorizontal="25dp"
+        android:layout_marginVertical="75dp"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/set_user_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/edit_text_black_border"
+            android:drawableStart="@drawable/edit"
+            android:hint="@string/settings_username"
+            android:textAlignment="center" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/set_user_nick"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="20dp"
+            android:background="@drawable/edit_text_black_border"
+            android:drawableStart="@drawable/edit"
+            android:hint="@string/settings_usernick"
+            android:textAlignment="center" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/save_user_information"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/edit_text_black_border"
+            android:drawableStart="@drawable/status"
+            android:hint="@string/settings_userStatus"
+            android:textAlignment="center" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button_save_for_settings"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/linear_settings"
+        android:layout_marginHorizontal="75dp"
+        android:background="@drawable/button_color"
+        android:text="@string/save"
+        android:textColor="@color/white"
+        android:textStyle="bold" />
 
 </RelativeLayout>

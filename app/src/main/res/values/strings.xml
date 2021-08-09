@@ -24,5 +24,9 @@
     <string name="textFor_registration">Уже есть аккаунт? Войти</string>
     <string name="register">регистрация</string>
     <string name="text_master_privacy">правила пользования и политика конфидециальности</string>
+    <string name="settings_username">UserName</string>
+    <string name="settings_usernick">UserNick</string>
+    <string name="settings_userStatus">Hi there, I`m Using Chat Qwerty</string>
+    <string name="save">Сохранить</string>
     //https://docs.google.com/document/d/1dHhoNBivxOaNm9aXTA-Tvg3-f1z6lU924W32Hm98nao/edit?usp=sharing
 </resources>
