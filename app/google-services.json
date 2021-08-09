@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "265865417063",
+    "firebase_url": "https://newchatqwerty-default-rtdb.europe-west1.firebasedatabase.app",
     "project_id": "newchatqwerty",
     "storage_bucket": "newchatqwerty.appspot.com"
   },
@@ -13,6 +14,14 @@
         }
       },
       "oauth_client": [
+        {
+          "client_id": "265865417063-hvl21cebro9u33b5s3a0dir1bjlgvcgs.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.youtubehome",
+            "certificate_hash": "4ab34f8ddd73a5be7e7980afd9f90c7513d4bdcf"
+          }
+        },
         {
           "client_id": "265865417063-pcm1bfi6segqdii283edna4mr2n069e5.apps.googleusercontent.com",
           "client_type": 3

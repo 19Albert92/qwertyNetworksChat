@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -11,7 +12,9 @@
         android:layout_height="150dp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="45dp"
-        android:src="@drawable/profile" />
+        android:src="@drawable/edit"
+        app:civ_border_color="#FF000000"
+        app:civ_border_width="2dp" />
 
     <androidx.appcompat.widget.LinearLayoutCompat
         android:id="@+id/linear_settings"
@@ -24,31 +27,34 @@
 
         <androidx.appcompat.widget.AppCompatEditText
             android:id="@+id/set_user_name"
+            android:inputType="textPersonName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/edit_text_black_border"
-            android:drawableStart="@drawable/edit"
+            android:drawableEnd="@drawable/edit"
             android:hint="@string/settings_username"
-            android:textAlignment="center" />
+            android:maxLines="1" />
 
         <androidx.appcompat.widget.AppCompatEditText
             android:id="@+id/set_user_nick"
+            android:inputType="textPersonName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginVertical="20dp"
             android:background="@drawable/edit_text_black_border"
-            android:drawableStart="@drawable/edit"
+            android:drawableEnd="@drawable/edit"
             android:hint="@string/settings_usernick"
-            android:textAlignment="center" />
+            android:maxLines="1" />
 
         <androidx.appcompat.widget.AppCompatEditText
             android:id="@+id/save_user_information"
             android:layout_width="match_parent"
+            android:inputType="text"
             android:layout_height="wrap_content"
             android:background="@drawable/edit_text_black_border"
-            android:drawableStart="@drawable/status"
+            android:drawableEnd="@drawable/status"
             android:hint="@string/settings_userStatus"
-            android:textAlignment="center" />
+            android:maxLines="1" />
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 

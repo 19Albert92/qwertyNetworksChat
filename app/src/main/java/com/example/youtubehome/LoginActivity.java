@@ -82,14 +82,6 @@ public class LoginActivity extends AppCompatActivity {
                                     .setCallbacks(mCallbacks)          // OnVerificationStateChangedCallbacks
                                     .build();
                     PhoneAuthProvider.verifyPhoneNumber(options);
-
-                    /*PhoneAuthProvider.getInstance().verifyPhoneNumber(
-                            phoneNumber,
-                            60,
-                            TimeUnit.SECONDS,
-                            LoginActivity.this,
-                            mCallbacks
-                    );*/
                 }
             }
         });

@@ -8,6 +8,7 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
@@ -17,15 +18,15 @@ public class WelcomeActivity extends AppCompatActivity {
     private TextView textPrivacy;
 
     private FirebaseAuth mAuth;
+    private FirebaseApp firebaseApp;
     private FirebaseUser currentUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome);
+        FirebaseApp.initializeApp(this);
         initViewView();
-        mAuth = FirebaseAuth.getInstance();
-        currentUser = mAuth.getCurrentUser();
     }
 
     private void initViewView() {
@@ -34,6 +35,9 @@ public class WelcomeActivity extends AppCompatActivity {
 
         textPrivacy = (TextView) findViewById(R.id.privacy);
         clickListenerForTextPrivacy();
+
+        mAuth = FirebaseAuth.getInstance();
+        currentUser = mAuth.getCurrentUser();
     }
 
     private void clickListenerForButton() {
