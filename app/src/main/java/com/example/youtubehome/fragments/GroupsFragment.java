@@ -1,16 +1,18 @@
 package com.example.youtubehome.fragments;
 
-import android.icu.text.Edits;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
+import com.example.youtubehome.GroupChatActivity;
 import com.example.youtubehome.R;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -22,7 +24,6 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
-import java.util.zip.DataFormatException;
 
 public class GroupsFragment extends Fragment {
 
@@ -31,6 +32,9 @@ public class GroupsFragment extends Fragment {
     private ArrayList<String> listOfGroups = new ArrayList<>();
 
     private DatabaseReference GroupRef;
+    private Iterator iterator;
+
+    public static String KEY_GROUP_CHAT = "group_chat";
 
     public static GroupsFragment newInstance() {
         GroupsFragment fragment = new GroupsFragment();
@@ -52,15 +56,24 @@ public class GroupsFragment extends Fragment {
         GroupRef = FirebaseDatabase.getInstance().getReference().child("Groups");
         arrayAdapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_list_item_1, listOfGroups);
         listView.setAdapter(arrayAdapter);
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                String currentGroupChatName = parent.getItemAtPosition(position).toString();
+                Intent group_chat_intent = new Intent(getContext(), GroupChatActivity.class);
+                group_chat_intent.putExtra(KEY_GROUP_CHAT, currentGroupChatName);
+                startActivity(group_chat_intent);
+            }
+        });
     }
 
     private void RetrievAndShowGroups() {
         GroupRef.addValueEventListener(new ValueEventListener() {
             @Override
-            public void onDataChange(DataSnapshot snapshot) {
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
 
                 Set<String> set = new HashSet<>();
-                Iterator iterator = snapshot.getChildren().iterator();
+                iterator = snapshot.getChildren().iterator();
                 while (iterator.hasNext()) {
                     set.add(((DataSnapshot) iterator.next()).getKey());
                 }
@@ -70,7 +83,7 @@ public class GroupsFragment extends Fragment {
             }
 
             @Override
-            public void onCancelled(DatabaseError error) {
+            public void onCancelled(@NonNull DatabaseError error) {
 
             }
         });
@@ -82,7 +95,7 @@ public class GroupsFragment extends Fragment {
     }
 
     @Override
-    public void onViewCreated(View view, Bundle savedInstanceState) {
+    public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
     }
 }
