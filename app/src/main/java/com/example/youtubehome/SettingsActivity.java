@@ -204,7 +204,7 @@ public class SettingsActivity extends AppCompatActivity {
                                             loadBar.dismiss();
                                         } else {
                                             String message = task.getException().toString();
-                                            Toast.makeText(SettingsActivity.this, "Произогла ошибка " + message, Toast.LENGTH_LONG).show();
+                                            Toast.makeText(SettingsActivity.this, "Произошла ошибка " + message, Toast.LENGTH_LONG).show();
                                             loadBar.dismiss();
                                         }
                                     }

@@ -16,7 +16,7 @@
     <string name="exit_item">Выход</string>
     <string name="search_item">Поиск</string>
     <string name="settings_item">Настройки</string>
-    <string name="create_new_group_item">Создать группу</string>
+    <string name="create_new_group_item">Новая группа</string>
     <string name="button_back_privacy">назад</string>
     <string name="button_to_verification">подтвердить</string>
     <string name="next">войти</string>

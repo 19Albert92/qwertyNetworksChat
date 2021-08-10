@@ -1,18 +1,24 @@
 package com.example.youtubehome;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.widget.Toolbar;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
 import com.example.youtubehome.adapter.TabsAccessorAdapter;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.tabs.TabLayout;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -79,6 +85,7 @@ public class MainActivity extends AppCompatActivity {
                 break;
             }
             case R.id.create_group_item: {
+                createGroupe();
                 break;
             }
         }
@@ -112,8 +119,46 @@ public class MainActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onCancelled(DatabaseError error) {
+            public void onCancelled(DatabaseError error) {}
+        });
+    }
 
+    private void createGroupe() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this, R.style.AlertDialog);
+        builder.setTitle("Введите названия группы");
+
+        final EditText groupNameField = new EditText(this);
+        groupNameField.setHint("Название группы");
+        builder.setView(groupNameField);
+        
+        builder.setPositiveButton("Создать", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                String groupName = groupNameField.getText().toString();
+                 if (TextUtils.isEmpty(groupName)) {
+                     Toast.makeText(MainActivity.this, "Введите название группы", Toast.LENGTH_SHORT).show();
+                 } else {
+                     createNewGroup(groupName);
+                 }
+            }
+        });
+
+        builder.setNegativeButton("Отмена", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.cancel();
+            }
+        });
+        builder.show();
+    }
+
+    private void createNewGroup(String groupName) {
+        rootRef.child("Groups").child(groupName).setValue("").addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(Task<Void> task) {
+                if (task.isSuccessful()) {
+                    Toast.makeText(MainActivity.this, "Группа " + groupName + " успешно создана", Toast.LENGTH_SHORT).show();
+                }
             }
         });
     }
